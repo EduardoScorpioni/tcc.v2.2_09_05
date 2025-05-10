@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades Afiliadas</title>
+    <link rel="stylesheet" href="stylesshet.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Unidades Afiliadas à Med Click</h1>
+        
+        <div class="carousel">
+            <button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel-viewport">
+                <div class="carousel-cards">
+
+                    <div class="card">
+                        <div class="card-icon">Foto</div>
+                        <div class="card-info">
+                            Nome-endereço-Cep-estado/cidade
+                        </div>
+                        <button class="action-button">Como chegar</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">Foto</div>
+                        <div class="card-info">
+                            Nome-endereço-Cep-estado/cidade
+                        </div>
+                        <button class="action-button">Como chegar</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">Foto</div>
+                        <div class="card-info">
+                            Nome-endereço-Cep-estado/cidade
+                        </div>
+                        <button class="action-button">Como chegar</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">Foto</div>
+                        <div class="card-info">
+                            Nome-endereço-Cep-estado/cidade
+                        </div>
+                        <button class="action-button">Como chegar</button>
+                    </div>
+
+                </div>
+            </div>
+            <button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+
+        <button class="view-all-button">Ver todas unidades</button>
+
+        <footer>
+            <p>Informações - Selos de Segurança - CNPJ</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+    
+        function moveCarousel(direction) {
+            const cards = document.querySelector('.carousel-cards');
+            const card = document.querySelector('.card');
+            const totalCards = document.querySelectorAll('.card').length;
+            const visibleCards = Math.floor(document.querySelector('.carousel-viewport').offsetWidth / card.offsetWidth);
+            const cardWidth = card.offsetWidth + 20; // margem incluída
+    
+            // Atualiza o índice com looping infinito
+            currentIndex += direction;
+    
+            if (currentIndex < 0) {
+                currentIndex = totalCards - visibleCards;
+            } else if (currentIndex > totalCards - visibleCards) {
+                currentIndex = 0;
+            }
+    
+            cards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+    </script>
+    
+</body>
+</html>

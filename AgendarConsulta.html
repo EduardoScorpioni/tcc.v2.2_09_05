@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agendamento de Consultas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Basic styles for the appointment scheduling page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            margin-top: 40px;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 480px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 24px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="time"],
+        select {
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        input[type="time"]:focus,
+        select:focus {
+            border-color: #2980b9;
+            outline: none;
+        }
+        button {
+            background-color: #2980b9;
+            color: white;
+            padding: 12px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #1c5980;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Agendamento de Consultas</h1>
+        <form>
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required />
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required />
+
+            <label for="data">Data da Consulta</label>
+            <input type="date" id="data" name="data" required />
+
+            <label for="hora">Hora da Consulta</label>
+            <input type="time" id="hora" name="hora" required />
+
+            <label for="medico">Médico</label>
+            <select id="medico" name="medico" required>
+                <option value="" disabled selected>Selecione o médico</option>
+                <option value="dr_silva">Dr. Silva</option>
+                <option value="dra_souza">Dra. Souza</option>
+                <option value="dr_oliveira">Dr. Oliveira</option>
+            </select>
+
+            <button type="submit">Agendar Consulta</button>
+        </form>
+        <div class="footer">
+            &copy; 2024 MedClick - Todos os direitos reservados
+        </div>
+    </div>
+</body>
+</html>
